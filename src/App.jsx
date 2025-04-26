@@ -36,16 +36,18 @@ const info = [
 function App() {
   const [people, setPeople] = useState(info);
 
-  // let number = 2;
-
   const [num, setNum] = useState(0);
 
   function incrementCount() {
-    setNum((prevNum) => prevNum + 1);
+    if (num !== 3) {
+      setNum((prevNum) => prevNum + 1);
+    }
   }
 
   function decrementCount() {
-    setNum((prevNum) => prevNum - 1);
+    if (num !== 0) {
+      setNum((prevNum) => prevNum - 1);
+    }
   }
 
   return (

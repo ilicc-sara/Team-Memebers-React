@@ -1,8 +1,6 @@
 import React from "react";
 
 function Person(props) {
-  console.log(props);
-
   const { name, role, descpiption, image, incrementCount, decrementCount } =
     props;
   return (
