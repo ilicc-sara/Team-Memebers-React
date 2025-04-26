@@ -3,7 +3,8 @@ import React from "react";
 function Person(props) {
   console.log(props);
 
-  const { name, role, descpiption, image } = props;
+  const { name, role, descpiption, image, incrementCount, decrementCount } =
+    props;
   return (
     <article class="review">
       <div class="img-container">
@@ -23,12 +24,12 @@ function Person(props) {
         <ion-icon
           class="icon btn-left"
           name="chevron-back-outline"
-          onclick={() => console.log("left-button clicked")}
+          onclick={() => decrementCount()}
         ></ion-icon>
         <ion-icon
           class="icon btn-right"
           name="chevron-forward-outline"
-          onclick={() => console.log("right-button clicked")}
+          onclick={() => incrementCount()}
         ></ion-icon>
       </div>
 

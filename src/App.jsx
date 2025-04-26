@@ -34,15 +34,29 @@ const info = [
 ];
 
 function App() {
-  const [people, setPeople] = useState(info[3]);
+  const [people, setPeople] = useState(info);
+
+  // let number = 2;
+
+  const [num, setNum] = useState(0);
+
+  function incrementCount() {
+    setNum((prevNum) => prevNum + 1);
+  }
+
+  function decrementCount() {
+    setNum((prevNum) => prevNum - 1);
+  }
 
   return (
     <>
       <Person
-        name={people.name}
-        role={people.role}
-        descpiption={people.descpiption}
-        image={people.image}
+        name={people[num].name}
+        role={people[num].role}
+        descpiption={people[num].descpiption}
+        image={people[num].image}
+        incrementCount={incrementCount}
+        decrementCount={decrementCount}
       />
     </>
   );
