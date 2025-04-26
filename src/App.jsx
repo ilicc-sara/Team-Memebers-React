@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Person from "./Person";
 
 const info = [
   {
@@ -10,7 +11,7 @@ const info = [
     image: "./pic0.jpeg",
   },
   {
-    name: "anna johnson",
+    name: "peter jones",
     role: "web designer",
     descpiption:
       "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal",
@@ -33,47 +34,16 @@ const info = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [people, setPeople] = useState(info[3]);
 
   return (
     <>
-      <article class="review">
-        <div class="img-container">
-          <img class="profile-pic" src="/pic0.jpeg" alt="Team Member picture" />
-        </div>
-
-        <div>
-          <h4 class="member">Anna Smith</h4>
-          <p class="job">Designer</p>
-        </div>
-
-        <div class="info-cont">
-          <p class="info">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
-            hic amet dolorem aliquam asperiores nesciunt doloremque blanditiis
-            veritatis doloribus dolorum aperiam, id repudiandae expedita fuga
-            animi nam nobis sunt officiis. Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit.
-          </p>
-        </div>
-
-        <div class="btn-container">
-          <ion-icon
-            class="icon btn-left"
-            name="chevron-back-outline"
-            onclick={() => console.log("left-button clicked")}
-          ></ion-icon>
-          <ion-icon
-            class="icon btn-right"
-            name="chevron-forward-outline"
-            onclick={() => console.log("right-button clicked")}
-          ></ion-icon>
-        </div>
-
-        {/* <div class="btn-cont">
-        <button>Next</button>
-      </div> */}
-      </article>
+      <Person
+        name={people.name}
+        role={people.role}
+        descpiption={people.descpiption}
+        image={people.image}
+      />
     </>
   );
 }
